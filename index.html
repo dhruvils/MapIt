@@ -1,0 +1,25 @@
+<!doctype html>
+<html ng-app="mapIt">
+	<head>
+		<title>
+			MapIt
+		</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkag9tWKIuW60OYonw3hOV4YSMDMDF2Ok"></script>
+		<script type="text/javascript" src="app/app.js"></script>
+		<script type="text/javascript" src="app/map-it-controller.js"></script>
+
+		<!-- <link rel="stylesheet" type="text/css" href="mapit.css"></link> -->
+	</head>
+
+	<body ng-controller="mapItController">
+		<div id="map" style="height: 100%; width: 100%;"></div>
+		{{test}}
+	</body>
+</html>
+
+<!-- TODO
+css file to make sure map is displayed properly
+search bar
+markers
+ -->

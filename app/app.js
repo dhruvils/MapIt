@@ -1,0 +1,1 @@
+var mapIt = angular.module('mapIt', []);
