@@ -1,11 +1,20 @@
-var mapItController = ['$scope', function(scope) {
-	var mapOptions = {
-		center: {lat: -34.397, lng: 150.644},
-		zoom: 8
+var mapItController = ['$scope', 'location', 'locSearch', function(scope, location, locSearch) {
+	scope.mapOptions = {
+		center: location(),
+		zoom: 5
 	}
+	scope.map = new google.maps.Map(document.getElementById('map'), scope.mapOptions);
 
-	scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
-	scope.test = 'Hello World!'
+	scope.test = "";
+
+	scope.button_click = function() {
+		locSearch.getCoordinates(scope.test).then(function(data){
+			scope.map.setCenter(data);
+			scope.map.setZoom(10);
+		}, function(error) {
+			console.log('FAILED - LOCATION COORDINATES SERVICE: ' + error);
+		});
+	}
 }];
 
 mapIt.controller('mapItController', mapItController);
