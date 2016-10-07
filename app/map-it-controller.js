@@ -5,8 +5,6 @@ var mapItController = ['$scope', 'location', 'locSearch', function(scope, locati
 	}
 	scope.map = new google.maps.Map(document.getElementById('map'), scope.mapOptions);
 
-	scope.test = "";
-
 	scope.button_click = function() {
 		locSearch.getCoordinates(scope.test).then(function(data){
 			scope.map.setCenter(data);

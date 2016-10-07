@@ -4,26 +4,38 @@
 		<title>
 			MapIt
 		</title>
+		<!-- API references -->
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkag9tWKIuW60OYonw3hOV4YSMDMDF2Ok"></script>
 
+		<!-- main app files -->
 		<script type="text/javascript" src="app/app.js"></script>
 		<script type="text/javascript" src="app/services.js"></script>
 		<script type="text/javascript" src="app/map-it-controller.js"></script>
 
+		<!-- directive files -->
+		<script type="text/javascript" src="app/title-bar/title-bar.js"></script>
+
+		<!-- main app stylesheet -->
 		<link rel="stylesheet" type="text/css" href="css/mapit.css"></link>
+
+		<!-- directive stylesheets -->
+		<link rel="stylesheet" type="text/css" href="app/title-bar/title-bar.css"></link>
 	</head>
 
 	<body ng-controller="mapItController">
-		<div> 
+		<!-- <div> 
 			<input type="text" name="temp" ng-model="test" /> <input type="button" ng-click="button_click()"/>
-		</div>
-		<div id="map" class="full-body hidden-overflow"></div>
+		</div> -->
+		<title-bar></title-bar>
+		<div id="map" class="map hidden-overflow left"></div>
 	</body>
 </html>
 
 <!-- TODO
 	Potentially fix the geolocation loading default to 0,0
 search bar - initial searching is possible - set up a search bar at the top of page
+	- add text box for search and make it fancy looking
+	- add user profile at left hand corner
 markers
  -->
