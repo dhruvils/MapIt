@@ -1,9 +1,12 @@
-var titleBarController = function(scope) {
-	scope.test = "Hello World";
-}
-
-mapIt.controller('titleBarController', ['$scope', function(scope) {
-	scope.test = "hello World";
+mapIt.controller('titleBarController', ['$scope', 'locSearch', function(scope, locSearch) {
+	scope.button_click = function() {
+		locSearch.getCoordinates(scope.query).then(function(data){
+			scope.map.setCenter(data);
+			scope.map.setZoom(10);
+		}, function(error) {
+			console.log('FAILED - LOCATION COORDINATES SERVICE: ' + error);
+		});
+	}
 }]);
 
 mapIt.directive('titleBar', function() {

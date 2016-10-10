@@ -1,14 +1,22 @@
 .black {
 	/*background-color: #101928;*/
-	background-color: #16253d;
+	/*background-color: #16253d;*/
+	background-color: black;
 	opacity: 0.75;
 
 }
 
 .title {
-	font-size: 24px;
+	font-size: 36px;
 	font-weight: bold;
-	width: 50%;
+}
+
+.small {
+	width: 15%;
+}
+
+.large {
+	width: 70%;
 }
 
 .top {
